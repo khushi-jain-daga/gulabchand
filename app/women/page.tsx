@@ -36,33 +36,61 @@ export default function WomenPage() {
   return (
     <div className="min-h-screen bg-gc-ivory text-gc-ink font-sans">
       
-      {/* 1. WOMEN HERO */}
-      <section className="relative w-full h-[65svh] md:h-[clamp(500px,65vh,750px)] overflow-hidden select-none bg-gc-ink flex items-end">
-        <ProductImage
-          src="https://cdn.shopify.com/s/files/1/0687/1616/7406/files/PUN_3655.jpg"
+      {/* 1. WOMEN CAMPAIGN HERO */}
+      <section className="relative w-full min-h-[72vh] md:h-[78vh] overflow-hidden select-none bg-gc-dark flex items-end border-b border-gc-border group">
+        {/* Full Bleed Background Image */}
+        <img
+          src="/brand/category-women.jpg"
           alt="Gulabchand Women's Collection"
-          category="Women"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center transform scale-100 group-hover:scale-[1.03] transition-transform duration-1000 ease-out"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+        
+        {/* Dark Gradient Overlay (Bottom & Left) */}
+        <div className="absolute inset-0 bg-gradient-to-t from-gc-dark/95 via-gc-dark/45 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-gc-dark/80 via-gc-dark/30 to-transparent pointer-events-none" />
 
-        <div className="relative z-10 w-full max-w-[1600px] mx-auto px-5 sm:px-10 lg:px-16 pb-12 sm:pb-16 text-white">
-          <div className="max-w-xl space-y-3">
-            <h1 className="text-[clamp(44px,6vw,80px)] font-serif font-bold uppercase tracking-tight leading-[0.95] text-white">
+        {/* Hero Content (Bottom-Left Aligned) */}
+        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[56px] pb-12 sm:pb-16 text-white">
+          <div className="max-w-2xl space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
+            
+            {/* Eyebrow Tag */}
+            <div className="flex items-center gap-2">
+              <span className="w-6 h-[1.5px] bg-gc-sand inline-block" />
+              <span className="text-xs font-sans font-bold tracking-[0.25em] text-gc-sand uppercase">
+                WOMEN’S COLLECTION
+              </span>
+            </div>
+
+            {/* Heading */}
+            <h1 className="text-[clamp(44px,7vw,88px)] font-serif font-bold uppercase tracking-tight leading-[0.92] text-white">
               WOMEN
             </h1>
-            <p className="text-base sm:text-xl font-serif italic text-gc-sand font-light">
+
+            {/* Subcopy */}
+            <p className="text-base sm:text-xl font-serif italic text-gc-ivory/90 font-light max-w-md">
               Printed styles for every day and occasion.
             </p>
-            <div className="pt-2">
+
+            {/* CTA & Secondary Links */}
+            <div className="pt-3 space-y-4">
               <Link
                 href="/shop?cat=New Arrivals"
-                className="px-6 py-3 bg-gc-white text-gc-ink font-sans font-bold text-xs uppercase tracking-widest hover:bg-gc-sand transition-colors rounded-sm inline-flex items-center gap-2 shadow-md"
+                className="px-6 py-3.5 bg-gc-white text-gc-ink font-sans font-bold text-xs uppercase tracking-widest hover:bg-gc-green hover:text-white transition-colors duration-200 rounded-xs inline-flex items-center gap-2.5 shadow-lg group/cta"
               >
                 <span>SHOP NEW ARRIVALS</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover/cta:translate-x-1.5" />
               </Link>
+
+              {/* Secondary Category Quick Links */}
+              <div className="flex items-center gap-2 text-xs font-sans font-bold tracking-wider text-gc-sand uppercase pt-1">
+                <Link href="/shop?cat=Kurtis" className="hover:text-white transition-colors">KURTIS</Link>
+                <span className="text-gc-ivory/40">·</span>
+                <Link href="/shop?cat=Dresses" className="hover:text-white transition-colors">DRESSES</Link>
+                <span className="text-gc-ivory/40">·</span>
+                <Link href="/shop?cat=Suit Sets" className="hover:text-white transition-colors">SUIT SETS</Link>
+              </div>
             </div>
+
           </div>
         </div>
       </section>

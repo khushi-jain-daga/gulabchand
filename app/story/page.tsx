@@ -130,40 +130,59 @@ export default function StoryPage() {
         </div>
       </section>
 
-      {/* 3. THE BEGINNING — Editorial Heritage */}
-      <section className="bg-[#FCFBF8] border-b border-gc-border overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[520px]">
+      {/* 3. THE BEGINNING — Editorial Origin Block */}
+      <section className="bg-gc-ivory border-b border-gc-border overflow-hidden select-none">
+        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[540px]">
           
-          {/* Left: Image with Subtle Zoom */}
-          <div className="lg:col-span-6 relative min-h-[380px] lg:min-h-full group overflow-hidden reveal-up">
+          {/* Left Column: Full-height Editorial Image */}
+          <div className="lg:col-span-6 relative min-h-[360px] sm:min-h-[440px] lg:min-h-full group overflow-hidden reveal-up">
             <img
               src="/brand/category-women.jpg"
-              alt="Founders and Beginning of Gulabchand"
+              alt="Gulabchand Prints Legacy"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            
+            {/* Top-Left Subtle Tag */}
             <div className="absolute top-6 left-6 z-10">
-              <span className="px-3 py-1 bg-black/75 backdrop-blur-xs text-[#EAD8B8] font-sans font-bold text-[10px] tracking-[0.2em] uppercase rounded-xs">
+              <span className="px-3.5 py-1.5 bg-black/40 backdrop-blur-md text-gc-sand text-[10px] font-sans font-bold uppercase tracking-[0.22em] border border-gc-sand/30 rounded-xs shadow-md">
                 SINCE 1930
+              </span>
+            </div>
+
+            {/* Bottom-Left Overlay Label */}
+            <div className="absolute bottom-6 left-6 z-10">
+              <span className="text-xs font-sans font-bold tracking-[0.2em] text-gc-sand uppercase block">
+                JAIPUR PRINT LEGACY
               </span>
             </div>
           </div>
 
-          {/* Right: Rich Narrative Panel */}
-          <div className="lg:col-span-6 bg-[#F4EFE6] p-8 sm:p-14 lg:p-20 flex flex-col justify-center space-y-6 reveal-up">
-            <span className="text-xs font-sans font-bold tracking-[0.2em] text-gc-green uppercase block">
-              THE BEGINNING
-            </span>
-            <h2 className="text-[clamp(30px,3.8vw,48px)] font-serif font-bold uppercase tracking-tight leading-tight text-gc-ink">
-              CRAFTED THROUGH<br />GENERATIONS
-            </h2>
-            <p className="text-base sm:text-lg font-serif text-gc-muted font-light leading-relaxed max-w-lg">
-              Founded by Shri Suresh Tak, Shri Rajendra Tak, and Shri Vishnu Tak, Gulabchand Prints carries forward a Jaipur legacy rooted in block printing, fabric, and craft.
-            </p>
-            <div className="pt-4 border-t border-gc-border/80 text-[11px] font-sans font-bold tracking-wider text-gc-green uppercase flex items-center gap-2">
+          {/* Right Column: Warm Ivory Narrative Panel */}
+          <div className="lg:col-span-6 bg-gc-ivory p-8 sm:p-14 lg:p-20 flex flex-col justify-center space-y-6 reveal-up">
+            <div className="space-y-2">
+              <span className="text-xs font-sans font-bold tracking-[0.22em] text-gc-green uppercase block">
+                THE BEGINNING
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-serif font-bold uppercase tracking-tight leading-[1.05] text-gc-ink">
+                CRAFTED THROUGH<br />GENERATIONS
+              </h2>
+            </div>
+
+            <div className="space-y-4 font-serif text-base sm:text-lg text-gc-muted font-light leading-relaxed max-w-lg">
+              <p>
+                Founded by Shri Suresh Tak, Shri Rajendra Tak, and Shri Vishnu Tak, Gulabchand Prints carries forward a Jaipur legacy rooted in block printing, fabric, and craft.
+              </p>
+              <p className="text-sm sm:text-base text-gc-muted/90 pt-1">
+                From clothing to unstitched fabrics and home textiles, the house continues to bring Jaipur prints into everyday life.
+              </p>
+            </div>
+
+            <div className="pt-6 border-t border-gc-border text-[11px] font-sans font-bold tracking-wider text-gc-green uppercase flex flex-wrap items-center gap-2 sm:gap-3 transition-opacity">
               <span>JAIPUR ROOTS</span>
-              <span className="text-gc-muted">·</span>
+              <span className="text-gc-muted/50">·</span>
               <span>HAND BLOCK PRINTING</span>
-              <span className="text-gc-muted">·</span>
+              <span className="text-gc-muted/50">·</span>
               <span>CONTEMPORARY WARDROBES</span>
             </div>
           </div>
