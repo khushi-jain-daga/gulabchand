@@ -20,6 +20,7 @@ import {
 export default function HomePage() {
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterSuccess, setNewsletterSuccess] = useState(false);
+  const [activeStoreIdx, setActiveStoreIdx] = useState(0);
   const categorySectionRef = useRef<HTMLElement>(null);
   const [catScale, setCatScale] = useState(1);
   const [catOpacity, setCatOpacity] = useState(1);
@@ -548,97 +549,215 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 08 JAIPUR STORES — Retail Showrooms */}
-      <section className="py-14 md:py-20 bg-gc-white border-b border-gc-border">
-        <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[56px] space-y-6">
-          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 border-b border-gc-border pb-4">
-            <div className="space-y-1">
-              <span className="text-[10px] font-sans font-bold text-gc-green uppercase tracking-[0.2em] block">
-                RETAIL SHOWROOMS
+      {/* 08 JAIPUR SHOWROOMS — 2-Column Editorial Showroom Layout */}
+      <section className="py-16 md:py-24 bg-gc-ivory border-b border-gc-border select-none">
+        <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[56px] space-y-8 md:space-y-12">
+          
+          {/* Section Header */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 border-b border-gc-border pb-6">
+            <div className="space-y-1.5 max-w-2xl">
+              <span className="text-[10px] font-sans font-bold text-gc-green uppercase tracking-[0.22em] block">
+                JAIPUR SHOWROOMS
               </span>
-              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-gc-ink uppercase tracking-tight">
-                VISIT US IN JAIPUR
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gc-ink tracking-tight">
+                Visit Gulabchand in Jaipur
               </h2>
-              <p className="text-xs sm:text-sm font-sans text-gc-muted font-light leading-relaxed max-w-xl">
-                Step into Gulabchand’s Jaipur showrooms to explore printed clothing, unstitched fabrics, and living textiles in person.
+              <p className="text-xs sm:text-sm font-sans text-gc-muted font-light leading-relaxed pt-1">
+                Discover printed clothing, unstitched fabrics, and living textiles across our Jaipur showrooms.
               </p>
             </div>
             <Link
               href="/stores"
-              className="text-xs font-sans font-bold text-gc-ink uppercase tracking-widest hover:text-gc-green flex items-center gap-1.5 transition-colors group shrink-0"
+              className="text-xs font-sans font-bold text-gc-ink uppercase tracking-widest hover:text-gc-green flex items-center gap-2 transition-colors group shrink-0"
             >
               <span>ALL 4 STORES</span>
-              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-            {[
-              {
-                id: "citypulse",
-                area: "MI ROAD / NARAIN SINGH CIRCLE",
-                name: "CITYPULSE SHOWROOM",
-                address: "Citypulse Mall, Narain Singh Circle",
-                phone: "+91 7849938983",
-                mapLink: "https://maps.google.com/?q=Citypulse+Mall+Jaipur",
-              },
-              {
-                id: "badi-chopad",
-                area: "OLD CITY / HAWA MAHAL ROAD",
-                name: "BADI CHOPAD SHOWROOM",
-                address: "Hawa Mahal Road, Near Badi Chopad",
-                phone: "0141 2609460",
-                mapLink: "https://maps.google.com/?q=Hawa+Mahal+Road+Jaipur",
-              },
-              {
-                id: "mall-21",
-                area: "C SCHEME",
-                name: "MALL 21 SHOWROOM",
-                address: "Mall 21, Opp. Raj Mandir Cinema",
-                phone: "+91 8290688849",
-                mapLink: "https://maps.google.com/?q=Mall+21+C+Scheme+Jaipur",
-              },
-              {
-                id: "golden-leaf",
-                area: "TONK ROAD",
-                name: "GOLDEN LEAF SHOWROOM",
-                address: "Golden Leaf Complex, Tonk Road",
-                phone: "+91 7615933333",
-                mapLink: "https://maps.google.com/?q=Golden+Leaf+Tonk+Road+Jaipur",
-              },
-            ].map((store) => (
-              <div
-                key={store.id}
-                className="group p-5 rounded-[2px] bg-gc-ivory border border-gc-border flex flex-col justify-between hover:border-gc-green hover:-translate-y-0.5 hover:shadow-md transition-all duration-300 space-y-4"
-              >
-                <div className="space-y-1.5">
-                  <div className="flex items-center gap-1.5 text-gc-green text-[10px] sm:text-[11px] font-sans font-bold uppercase tracking-wider">
-                    <MapPin className="w-3.5 h-3.5 shrink-0" />
-                    <span>{store.area}</span>
-                  </div>
-                  <h3 className="font-serif font-bold text-base sm:text-lg text-gc-ink group-hover:text-gc-green transition-colors">
-                    {store.name}
-                  </h3>
-                  <p className="text-xs font-sans text-gc-muted font-light leading-relaxed">
-                    {store.address}
-                  </p>
+          {/* 2-Column Editorial Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+            
+            {/* Left Column: Large Visual Panel */}
+            <div className="lg:col-span-5 relative rounded-[2px] overflow-hidden bg-gc-ink min-h-[340px] lg:min-h-[520px] shadow-lg group">
+              {[
+                {
+                  num: "01",
+                  area: "MI ROAD / NARAIN SINGH CIRCLE",
+                  name: "Citypulse Showroom",
+                  tagline: "Flagship Showroom · MI Road Hub",
+                  image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80",
+                },
+                {
+                  num: "02",
+                  area: "OLD CITY / HAWA MAHAL ROAD",
+                  name: "Badi Chopad Showroom",
+                  tagline: "Heritage Heart · Old Jaipur",
+                  image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80",
+                },
+                {
+                  num: "03",
+                  area: "C SCHEME",
+                  name: "Mall 21 Showroom",
+                  tagline: "Boutique Experience · Near Raj Mandir",
+                  image: "https://images.unsplash.com/photo-1606744824163-985d376605aa?auto=format&fit=crop&w=1200&q=80",
+                },
+                {
+                  num: "04",
+                  area: "TONK ROAD",
+                  name: "Golden Leaf Showroom",
+                  tagline: "Textile & Living Studio · South Jaipur",
+                  image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80",
+                },
+              ].map((store, idx) => (
+                <div
+                  key={store.num}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                    activeStoreIdx === idx ? "opacity-100 z-10" : "opacity-0 z-0"
+                  }`}
+                >
+                  <img
+                    src={store.image}
+                    alt={store.name}
+                    className="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gc-ink/90 via-gc-ink/30 to-transparent" />
                 </div>
+              ))}
 
-                <div className="pt-3 border-t border-gc-border/60 flex items-center justify-between text-xs font-sans">
-                  <span className="text-gc-muted font-mono text-[11px]">{store.phone}</span>
-                  <a
-                    href={store.mapLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-bold text-gc-green hover:underline uppercase text-[11px] tracking-wider flex items-center gap-1 group/cta"
-                  >
-                    <span>GET DIRECTIONS</span>
-                    <span className="transition-transform duration-200 group-hover/cta:translate-x-1">→</span>
-                  </a>
-                </div>
+              {/* Overlay Badge Top Left */}
+              <div className="absolute top-5 left-5 z-20">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gc-ink/80 backdrop-blur-md text-gc-sand text-[10px] font-sans font-bold uppercase tracking-widest border border-gc-sand/30 shadow-md">
+                  <MapPin className="w-3 h-3 text-gc-sand" />
+                  <span>4 JAIPUR STORES</span>
+                </span>
               </div>
-            ))}
+
+              {/* Overlay Content Bottom Left */}
+              <div className="absolute bottom-6 left-6 right-6 z-20 space-y-1 text-gc-ivory">
+                <span className="text-[10px] font-sans font-bold text-gc-sand uppercase tracking-widest block">
+                  {[
+                    "MI ROAD / NARAIN SINGH CIRCLE",
+                    "OLD CITY / HAWA MAHAL ROAD",
+                    "C SCHEME",
+                    "TONK ROAD",
+                  ][activeStoreIdx]}
+                </span>
+                <h3 className="font-serif font-bold text-xl sm:text-2xl text-gc-ivory">
+                  {[
+                    "01 Citypulse Showroom",
+                    "02 Badi Chopad Showroom",
+                    "03 Mall 21 Showroom",
+                    "04 Golden Leaf Showroom",
+                  ][activeStoreIdx]}
+                </h3>
+                <p className="text-xs font-sans text-gc-ivory/80 font-light">
+                  {[
+                    "Flagship Showroom · MI Road Hub",
+                    "Heritage Heart · Old Jaipur",
+                    "Boutique Experience · Near Raj Mandir Cinema",
+                    "Textile & Living Studio · South Jaipur",
+                  ][activeStoreIdx]}
+                </p>
+              </div>
+            </div>
+
+            {/* Right Column: Interactive Vertical Showroom List */}
+            <div className="lg:col-span-7 flex flex-col justify-center space-y-3">
+              {[
+                {
+                  num: "01",
+                  area: "MI ROAD / NARAIN SINGH CIRCLE",
+                  name: "Citypulse Showroom",
+                  address: "Citypulse Mall, Narain Singh Circle",
+                  phone: "+91 7849938983",
+                  mapLink: "https://maps.google.com/?q=Citypulse+Mall+Jaipur",
+                },
+                {
+                  num: "02",
+                  area: "OLD CITY / HAWA MAHAL ROAD",
+                  name: "Badi Chopad Showroom",
+                  address: "Hawa Mahal Road, Near Badi Chopad",
+                  phone: "0141 2609460",
+                  mapLink: "https://maps.google.com/?q=Hawa+Mahal+Road+Jaipur",
+                },
+                {
+                  num: "03",
+                  area: "C SCHEME",
+                  name: "Mall 21 Showroom",
+                  address: "Mall 21, Opp. Raj Mandir Cinema",
+                  phone: "+91 8290688849",
+                  mapLink: "https://maps.google.com/?q=Mall+21+C+Scheme+Jaipur",
+                },
+                {
+                  num: "04",
+                  area: "TONK ROAD",
+                  name: "Golden Leaf Showroom",
+                  address: "Golden Leaf Complex, Tonk Road",
+                  phone: "+91 7615933333",
+                  mapLink: "https://maps.google.com/?q=Golden+Leaf+Tonk+Road+Jaipur",
+                },
+              ].map((store, idx) => {
+                const isActive = activeStoreIdx === idx;
+                return (
+                  <div
+                    key={store.num}
+                    onMouseEnter={() => setActiveStoreIdx(idx)}
+                    onClick={() => setActiveStoreIdx(idx)}
+                    className={`group cursor-pointer p-5 sm:p-6 rounded-[2px] border transition-all duration-300 relative ${
+                      isActive
+                        ? "bg-gc-white border-gc-green shadow-md border-l-4 border-l-gc-green -translate-x-0 sm:translate-x-1"
+                        : "bg-gc-white/60 border-gc-border hover:bg-gc-white hover:border-gc-green/50 hover:shadow-xs"
+                    }`}
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                      
+                      {/* Store Info */}
+                      <div className="space-y-1 flex-1">
+                        <div className="flex items-center gap-3">
+                          <span className={`font-mono text-xs font-bold ${isActive ? "text-gc-green" : "text-gc-muted/60"}`}>
+                            {store.num}
+                          </span>
+                          <span className="text-[10px] font-sans font-bold text-gc-green uppercase tracking-wider">
+                            {store.area}
+                          </span>
+                        </div>
+
+                        <h3 className={`font-serif font-bold text-lg sm:text-xl transition-colors ${
+                          isActive ? "text-gc-ink" : "text-gc-ink/80 group-hover:text-gc-ink"
+                        }`}>
+                          {store.name}
+                        </h3>
+
+                        <p className="text-xs font-sans text-gc-muted font-light leading-relaxed">
+                          {store.address}
+                        </p>
+                      </div>
+
+                      {/* Phone & Directions CTA */}
+                      <div className="flex sm:flex-col items-center sm:items-end justify-between gap-2 border-t sm:border-t-0 border-gc-border/60 pt-3 sm:pt-0 shrink-0">
+                        <span className="text-gc-muted font-mono text-xs font-medium">
+                          {store.phone}
+                        </span>
+                        <a
+                          href={store.mapLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-sans font-bold text-gc-green hover:underline uppercase tracking-wider group/link"
+                        >
+                          <span>GET DIRECTIONS</span>
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-1.5" />
+                        </a>
+                      </div>
+
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
           </div>
+
         </div>
       </section>
 
