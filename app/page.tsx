@@ -548,21 +548,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 08 JAIPUR STORES — Compact Directory */}
+      {/* 08 JAIPUR STORES — Retail Showrooms */}
       <section className="py-14 md:py-20 bg-gc-white border-b border-gc-border">
         <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[56px] space-y-6">
-          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-3 border-b border-gc-border pb-3">
-            <div>
+          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 border-b border-gc-border pb-4">
+            <div className="space-y-1">
               <span className="text-[10px] font-sans font-bold text-gc-green uppercase tracking-[0.2em] block">
                 RETAIL SHOWROOMS
               </span>
-              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-gc-ink uppercase tracking-tight pt-0.5">
+              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-gc-ink uppercase tracking-tight">
                 VISIT US IN JAIPUR
               </h2>
+              <p className="text-xs sm:text-sm font-sans text-gc-muted font-light leading-relaxed max-w-xl">
+                Step into Gulabchand’s Jaipur showrooms to explore printed clothing, unstitched fabrics, and living textiles in person.
+              </p>
             </div>
             <Link
               href="/stores"
-              className="text-xs font-sans font-bold text-gc-ink uppercase tracking-widest hover:text-gc-green flex items-center gap-1.5 transition-colors group"
+              className="text-xs font-sans font-bold text-gc-ink uppercase tracking-widest hover:text-gc-green flex items-center gap-1.5 transition-colors group shrink-0"
             >
               <span>ALL 4 STORES</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -570,17 +573,50 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-            {JAIPUR_STORES.map((store) => (
+            {[
+              {
+                id: "citypulse",
+                area: "MI ROAD / NARAIN SINGH CIRCLE",
+                name: "CITYPULSE SHOWROOM",
+                address: "Citypulse Mall, Narain Singh Circle",
+                phone: "+91 7849938983",
+                mapLink: "https://maps.google.com/?q=Citypulse+Mall+Jaipur",
+              },
+              {
+                id: "badi-chopad",
+                area: "OLD CITY / HAWA MAHAL ROAD",
+                name: "BADI CHOPAD SHOWROOM",
+                address: "Hawa Mahal Road, Near Badi Chopad",
+                phone: "0141 2609460",
+                mapLink: "https://maps.google.com/?q=Hawa+Mahal+Road+Jaipur",
+              },
+              {
+                id: "mall-21",
+                area: "C SCHEME",
+                name: "MALL 21 SHOWROOM",
+                address: "Mall 21, Opp. Raj Mandir Cinema",
+                phone: "+91 8290688849",
+                mapLink: "https://maps.google.com/?q=Mall+21+C+Scheme+Jaipur",
+              },
+              {
+                id: "golden-leaf",
+                area: "TONK ROAD",
+                name: "GOLDEN LEAF SHOWROOM",
+                address: "Golden Leaf Complex, Tonk Road",
+                phone: "+91 7615933333",
+                mapLink: "https://maps.google.com/?q=Golden+Leaf+Tonk+Road+Jaipur",
+              },
+            ].map((store) => (
               <div
                 key={store.id}
-                className="p-5 rounded-[2px] bg-gc-ivory border border-gc-border space-y-3 flex flex-col justify-between hover:border-gc-ink hover:shadow-xs transition-all duration-200"
+                className="group p-5 rounded-[2px] bg-gc-ivory border border-gc-border flex flex-col justify-between hover:border-gc-green hover:-translate-y-0.5 hover:shadow-md transition-all duration-300 space-y-4"
               >
                 <div className="space-y-1.5">
-                  <div className="flex items-center gap-1.5 text-gc-green text-xs font-sans font-bold uppercase tracking-wider">
-                    <MapPin className="w-3.5 h-3.5" />
+                  <div className="flex items-center gap-1.5 text-gc-green text-[10px] sm:text-[11px] font-sans font-bold uppercase tracking-wider">
+                    <MapPin className="w-3.5 h-3.5 shrink-0" />
                     <span>{store.area}</span>
                   </div>
-                  <h3 className="font-serif font-bold text-lg text-gc-ink">
+                  <h3 className="font-serif font-bold text-base sm:text-lg text-gc-ink group-hover:text-gc-green transition-colors">
                     {store.name}
                   </h3>
                   <p className="text-xs font-sans text-gc-muted font-light leading-relaxed">
@@ -594,9 +630,10 @@ export default function HomePage() {
                     href={store.mapLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-bold text-gc-green hover:underline uppercase text-[11px] tracking-wider"
+                    className="font-bold text-gc-green hover:underline uppercase text-[11px] tracking-wider flex items-center gap-1 group/cta"
                   >
-                    DIRECTIONS →
+                    <span>GET DIRECTIONS</span>
+                    <span className="transition-transform duration-200 group-hover/cta:translate-x-1">→</span>
                   </a>
                 </div>
               </div>
