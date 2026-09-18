@@ -170,17 +170,30 @@ export default function WomenPage() {
       <section className="py-16 md:py-24 bg-gc-green text-gc-ivory select-none">
         <div className="gc-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            {/* Left Image Panel */}
             <div className="lg:col-span-7">
-              <div className="aspect-[16/10] rounded-sm overflow-hidden shadow-md relative">
-                <ProductImage
-                  src="https://cdn.shopify.com/s/files/1/0687/1616/7406/files/PUN_3655.jpg"
-                  alt="Printed Cotton Feature"
-                  category="Women"
-                  className="w-full h-full object-cover"
+              <div className="group relative aspect-[16/10] rounded-sm overflow-hidden shadow-lg border border-white/10">
+                <img
+                  src="/brand/category-women.jpg"
+                  alt="Printed Cotton Jaipur Wear"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
+                
+                {/* Small Bottom-Left Label */}
+                <div className="absolute bottom-5 left-5 z-10 space-y-0.5 text-white">
+                  <span className="text-xs font-sans font-bold uppercase tracking-[0.2em] text-gc-sand block">
+                    PRINTED COTTON
+                  </span>
+                  <span className="text-[11px] font-sans font-light text-gc-ivory/80 block">
+                    Jaipur everyday wear
+                  </span>
+                </div>
               </div>
             </div>
 
+            {/* Right Text Panel */}
             <div className="lg:col-span-5 space-y-4">
               <span className="text-[11px] font-sans font-bold tracking-[0.2em] text-gc-sand uppercase block">
                 TEXTILE FOCUS
@@ -189,18 +202,19 @@ export default function WomenPage() {
                 PRINTED COTTON
               </h2>
               <p className="text-base sm:text-lg font-serif italic text-gc-sand/90 font-light leading-relaxed">
-                Breathable cotton silhouettes decorated with handcrafted Jaipur motifs for effortless daily wear.
+                Breathable cotton silhouettes finished with Jaipur-inspired prints for everyday ease.
               </p>
               <div className="pt-2">
                 <Link
                   href="/shop?fabric=Cotton"
-                  className="px-6 py-3 bg-gc-white text-gc-ink font-sans font-bold text-xs uppercase tracking-widest hover:bg-gc-sand transition-colors rounded-sm inline-flex items-center gap-2"
+                  className="px-6 py-3.5 bg-gc-white text-gc-ink font-sans font-bold text-xs uppercase tracking-widest hover:bg-gc-sand transition-colors duration-200 rounded-xs inline-flex items-center gap-2.5 shadow-md group/cta"
                 >
                   <span>SHOP COTTON</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover/cta:translate-x-1.5" />
                 </Link>
               </div>
             </div>
+
           </div>
         </div>
       </section>

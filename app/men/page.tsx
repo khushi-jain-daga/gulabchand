@@ -67,10 +67,9 @@ export default function MenPage() {
       
       {/* 1. MENSWEAR HERO */}
       <section className="relative w-full h-[65svh] md:h-[clamp(480px,65vh,700px)] overflow-hidden select-none bg-gc-ink flex items-end">
-        <ProductImage
-          src="https://cdn.shopify.com/s/files/1/0687/1616/7406/files/PUN_4640.jpg"
-          alt="Gulabchand Menswear Hero"
-          category="Men Kurtas"
+        <img
+          src="/brand/category-men.jpg"
+          alt="Gulabchand Menswear Collection"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
@@ -147,10 +146,9 @@ export default function MenPage() {
                   c.dominant ? "aspect-[4/3] sm:aspect-[16/10]" : "aspect-[4/3]"
                 }`}
               >
-                <ProductImage
+                <img
                   src={c.image}
                   alt={c.title}
-                  category={c.title}
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -178,13 +176,22 @@ export default function MenPage() {
         <div className="gc-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7">
-              <div className="aspect-[16/10] rounded-sm overflow-hidden shadow-sm relative">
-                <ProductImage
-                  src="https://cdn.shopify.com/s/files/1/0687/1616/7406/files/PUN_4640.jpg"
-                  alt="Printed Kurtas Feature"
-                  category="Men Kurtas"
-                  className="w-full h-full object-cover"
+              <div className="group relative aspect-[16/10] rounded-sm overflow-hidden shadow-md border border-gc-border">
+                <img
+                  src="/brand/category-men.jpg"
+                  alt="Printed Kurtas & Shirts"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
+                
+                <div className="absolute bottom-5 left-5 z-10 space-y-0.5 text-white">
+                  <span className="text-xs font-sans font-bold uppercase tracking-[0.2em] text-gc-sand block">
+                    PRINTED KURTAS
+                  </span>
+                  <span className="text-[11px] font-sans font-light text-gc-ivory/80 block">
+                    Jaipur menswear
+                  </span>
+                </div>
               </div>
             </div>
 
