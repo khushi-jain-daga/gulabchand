@@ -34,7 +34,7 @@ export default function WomenPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gc-ivory text-gc-ink font-sans">
+    <div className="min-h-screen bg-gc-ivory text-gc-ink font-sans pt-28 md:pt-32">
       
       {/* 1. WOMEN CAMPAIGN HERO */}
       <section className="relative w-full min-h-[72vh] md:h-[78vh] overflow-hidden select-none bg-gc-dark flex items-end border-b border-gc-border group">

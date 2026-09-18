@@ -9,7 +9,7 @@ export default function HomeDecorPage() {
   const homeProducts = PRODUCTS.filter((p) => p.category === "Home Decor");
 
   return (
-    <div className="min-h-screen bg-gc-ivory text-gc-ink font-sans pb-20 select-none">
+    <div className="min-h-screen bg-gc-ivory text-gc-ink font-sans pt-28 md:pt-32 pb-20 select-none">
       {/* Visual Hero Banner */}
       <section className="relative w-full h-[55vh] min-h-[420px] overflow-hidden bg-gc-ink flex items-end border-b border-gc-border group">
         <img

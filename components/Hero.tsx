@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface HeroProps {
   videoSrc?: string;
@@ -30,8 +30,8 @@ export const Hero: React.FC<HeroProps> = ({
   }, [videoSrc]);
 
   return (
-    <section className="relative w-full overflow-hidden select-none bg-gc-dark h-[76svh] md:h-[82vh] min-h-[540px] flex items-end border-b border-gc-border">
-      {/* Background Video with Ken Burns Scale Animation */}
+    <section className="relative w-full overflow-hidden select-none bg-gc-dark h-[76svh] md:h-[82vh] min-h-[520px] flex items-end">
+      {/* Background Video */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         {!usePosterFallback ? (
           <video
@@ -53,72 +53,43 @@ export const Hero: React.FC<HeroProps> = ({
           />
         )}
 
-        {/* Directional Gradient Overlays: Top (for navbar readability), Left (for text contrast), Bottom (for cinematic depth) */}
+        {/* Gradient Overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent pointer-events-none" />
       </div>
 
       {/* Hero Content Bottom-Left */}
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[56px] pb-12 sm:pb-16 text-white">
-        <div className="max-w-xl space-y-4 animate-[fadeUp_900ms_ease_forwards]">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[56px] pb-14 sm:pb-20 text-white">
+        <div className="max-w-2xl space-y-6 sm:space-y-7 animate-[fadeUp_900ms_ease_forwards]">
           
-          {/* Animated Eyebrow Line */}
+          {/* Eyebrow */}
           <div className="flex items-center gap-2.5">
             <span className="w-6 h-[1.5px] bg-[#EAD8B8] inline-block animate-pulse" />
-            <span className="text-[10px] sm:text-xs font-sans font-bold tracking-[0.24em] uppercase text-[#EAD8B8]">
+            <span className="text-[10px] sm:text-xs font-sans font-bold tracking-[0.25em] uppercase text-[#EAD8B8]">
               HAND BLOCK PRINTED IN JAIPUR
             </span>
           </div>
 
-          <h1 className="text-[clamp(34px,5.2vw,70px)] font-serif font-bold uppercase tracking-tight leading-[0.98] text-white">
-            A LEGACY IN PRINT.
+          {/* Main Heading */}
+          <h1 className="text-[clamp(42px,6.2vw,86px)] font-serif font-bold uppercase tracking-tight leading-[0.94] text-white">
+            A LEGACY<br />IN PRINT.
           </h1>
 
-          <p className="text-base sm:text-lg font-serif font-light text-white/90 leading-relaxed max-w-lg">
-            Hand block printed clothing, unstitched fabrics and home textiles from Jaipur.
-          </p>
-
-          <div className="pt-2 space-y-3">
-            <div className="flex flex-wrap items-center gap-3">
-              <Link
-                href="/women"
-                className="group h-12 px-7 bg-[#FCFBF8] text-[#20201D] font-sans font-bold text-xs uppercase tracking-widest hover:bg-[#EAD8B8] transition-all duration-300 rounded-[2px] shadow-md inline-flex items-center justify-center gap-2"
-              >
-                <span>SHOP WOMEN</span>
-                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1.5" />
-              </Link>
-
-              <Link
-                href="/men"
-                className="group h-12 px-7 bg-black/40 backdrop-blur-xs text-white border border-white/50 font-sans font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-[#20201D] hover:border-white transition-all duration-300 rounded-[2px] inline-flex items-center justify-center gap-2"
-              >
-                <span>SHOP MEN</span>
-                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1.5" />
-              </Link>
-            </div>
-
-            {/* Small text links under buttons */}
-            <div className="flex items-center gap-4 text-xs font-sans text-white/85 pt-1">
-              <Link href="/unstitched" className="hover:text-[#EAD8B8] uppercase tracking-wider font-semibold underline underline-offset-4 decoration-white/40 hover:decoration-[#EAD8B8] transition-colors">
-                UNSTITCHED
-              </Link>
-              <span className="text-white/40">·</span>
-              <Link href="/home-decor" className="hover:text-[#EAD8B8] uppercase tracking-wider font-semibold underline underline-offset-4 decoration-white/40 hover:decoration-[#EAD8B8] transition-colors">
-                HOME TEXTILES
-              </Link>
-            </div>
+          {/* Single Refined Ivory CTA */}
+          <div className="pt-1">
+            <Link
+              href="/shop?cat=New Arrivals"
+              className="group inline-flex items-center gap-2.5 px-8 py-4 bg-[#FCFBF8] text-[#20201D] font-sans font-bold text-xs uppercase tracking-[0.18em] hover:bg-[#EAD8B8] transition-all duration-300 rounded-[2px] shadow-md border border-white/20"
+            >
+              <span>SHOP NEW ARRIVALS</span>
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5 text-[#20201D]" />
+            </Link>
           </div>
-        </div>
-      </div>
 
-      {/* Animated Scroll Indicator at Bottom Center */}
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-1.5 text-white/70 text-[9px] font-sans font-bold tracking-[0.25em] uppercase pointer-events-none">
-        <span>SCROLL</span>
-        <div className="w-[1.5px] h-6 bg-white/20 relative overflow-hidden rounded-full">
-          <div className="w-full h-1/2 bg-[#EAD8B8] absolute top-0 animate-[gc-scroll-line_1.8s_ease-in-out_infinite]" />
         </div>
       </div>
     </section>
   );
 };
+
 

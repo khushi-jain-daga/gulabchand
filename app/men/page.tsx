@@ -63,7 +63,7 @@ export default function MenPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gc-white text-gc-ink font-sans">
+    <div className="min-h-screen bg-gc-white text-gc-ink font-sans pt-28 md:pt-32">
       
       {/* 1. MENSWEAR HERO */}
       <section className="relative w-full h-[65svh] md:h-[clamp(480px,65vh,700px)] overflow-hidden select-none bg-gc-ink flex items-end">

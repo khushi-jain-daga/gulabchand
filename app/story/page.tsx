@@ -28,36 +28,36 @@ export default function StoryPage() {
     {
       num: "01",
       title: "DRAW",
-      subtitle: "The Motif Conception",
-      desc: "A motif begins as a rhythm — drawn by hand, inspired by Rajasthani florals and traditional geometric bootis.",
+      subtitle: "Rhythm & Memory",
+      desc: "A motif begins as rhythm, repeat, and memory.",
       img: "/brand/category-unstitched.jpg"
     },
     {
       num: "02",
       title: "CARVE",
-      subtitle: "The Wood Carving",
-      desc: "A block gives it form — hand-carved in wood with precision by Jaipur craftsmen.",
+      subtitle: "Form & Contour",
+      desc: "The block gives the motif its form.",
       img: "https://cdn.shopify.com/s/files/1/0687/1616/7406/files/PUN_2150.jpg"
     },
     {
       num: "03",
       title: "COLOUR",
-      subtitle: "The Dye Formulation",
-      desc: "Dyes are formulated — balancing rich indigo, natural mud resist, and botanical shades.",
+      subtitle: "Warmth & Contrast",
+      desc: "Colour brings warmth, contrast, and life to the cloth.",
       img: "/brand/category-women.jpg"
     },
     {
       num: "04",
       title: "STAMP",
-      subtitle: "The Precision Impression",
-      desc: "A hand gives it character — stamped with steady rhythm and sight honed over decades.",
+      subtitle: "Touch of Hand",
+      desc: "Each impression is placed by hand, one after another.",
       img: "https://cdn.shopify.com/s/files/1/0687/1616/7406/files/PUN_2146.jpg"
     },
     {
       num: "05",
       title: "FINISH",
-      subtitle: "Sun-Cured & Softened",
-      desc: "Sun-cured and washed — transforming raw cotton into soft, wearable living textiles.",
+      subtitle: "Softened & Checked",
+      desc: "The fabric is checked, softened, and readied for everyday use.",
       img: "/brand/category-men.jpg"
     }
   ];
@@ -210,7 +210,7 @@ export default function StoryPage() {
                   FROM BLOCK<br />TO CLOTH.
                 </h2>
                 <p className="text-sm font-sans text-white/70 font-light leading-relaxed">
-                  Every meter of Gulabchand fabric undergoes a multi-stage artisanal transformation before reaching your hands.
+                  Gulabchand fabrics undergo a multi-stage artisanal transformation before reaching your hands.
                 </p>
               </div>
 

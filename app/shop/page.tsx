@@ -97,7 +97,7 @@ function ShopContent() {
   };
 
   return (
-    <div className="min-h-screen bg-gc-ivory text-gc-ink font-sans pb-20">
+    <div className="min-h-screen bg-gc-ivory text-gc-ink font-sans pt-28 md:pt-36 pb-20">
       
       {/* Header & Breadcrumb */}
       <div className="bg-gc-white border-b border-gc-border py-8">

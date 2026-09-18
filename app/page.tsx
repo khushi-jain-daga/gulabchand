@@ -169,7 +169,7 @@ export default function HomePage() {
       <Hero />
 
       {/* MOVING PRINT MARQUEE STRIP DIRECTLY BELOW HERO */}
-      <div className="w-full bg-[#1E3A2B] text-[#FDFBF8] overflow-hidden select-none border-b border-[#2C523D] gc-marquee h-[38px] md:h-[44px] flex items-center">
+      <div className="w-full bg-[#1E3A2B] text-[#FDFBF8] overflow-hidden select-none gc-marquee h-[38px] md:h-[44px] flex items-center -mt-px -mb-px relative z-10">
         <div className="gc-marquee-track flex items-center whitespace-nowrap text-[11px] sm:text-xs font-sans font-bold tracking-[0.22em] uppercase">
           {[...Array(6)].map((_, i) => (
             <span key={i} className="inline-flex items-center gap-4 px-4 opacity-90 hover:opacity-100 transition-opacity">
@@ -197,7 +197,7 @@ export default function HomePage() {
       {/* 02 SHOP BY CATEGORY — Compact Luxury Showcase with Scroll Zoom-out (57% / 43%, 480px Desktop Height) */}
       <section
         ref={categorySectionRef}
-        className="pt-8 sm:pt-10 pb-14 sm:pb-16 md:pb-20 bg-gc-white border-b border-gc-border overflow-hidden"
+        className="pt-8 sm:pt-10 pb-14 sm:pb-16 md:pb-20 bg-gc-white border-b border-gc-border overflow-hidden relative z-0"
       >
         <div className="w-[93%] max-w-[1500px] mx-auto space-y-7">
           
@@ -407,13 +407,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 05 THE GULABCHAND PRINT ROOM — Iconic Brand Section */}
+      {/* 05 INSIDE THE ATELIER — THE GULABCHAND PRINT ROOM */}
       <section className="py-20 md:py-28 bg-[#16251E] text-gc-ivory border-b border-gc-border/30 select-none overflow-hidden relative">
         {/* Subtle Moving Print Marquee */}
         <div className="w-full overflow-hidden border-b border-white/10 pb-4 mb-12 sm:mb-16">
           <div className="animate-marquee whitespace-nowrap text-xs sm:text-sm font-sans font-bold tracking-[0.25em] text-[#D8C9AF] uppercase opacity-85">
-            <span>JAIPUR HAND BLOCK PRINTS · CRAFTED THROUGH GENERATIONS · UNSTITCHED FABRICS · LIVING TEXTILES · JAIPUR SHOWROOMS · </span>
-            <span>JAIPUR HAND BLOCK PRINTS · CRAFTED THROUGH GENERATIONS · UNSTITCHED FABRICS · LIVING TEXTILES · JAIPUR SHOWROOMS · </span>
+            <span>INSIDE THE ATELIER · JAIPUR HAND BLOCK PRINTS · MOTIFS & COLOURS · BREATHABLE COTTON · INSIDE THE ATELIER · </span>
+            <span>INSIDE THE ATELIER · JAIPUR HAND BLOCK PRINTS · MOTIFS & COLOURS · BREATHABLE COTTON · INSIDE THE ATELIER · </span>
           </div>
         </div>
 
@@ -425,15 +425,15 @@ export default function HomePage() {
             <div className="lg:col-span-6 space-y-6">
               <div className="space-y-2">
                 <span className="text-xs font-sans font-bold tracking-[0.25em] text-[#D8C9AF] uppercase block">
-                  BRAND ATELIER
+                  INSIDE THE ATELIER
                 </span>
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white uppercase tracking-tight leading-[0.98]">
                   THE GULABCHAND<br />PRINT ROOM
                 </h2>
               </div>
 
-              <p className="text-base sm:text-xl font-serif italic text-gc-ivory/90 font-light leading-relaxed max-w-lg">
-                A world of Jaipur prints, carved blocks, breathable cottons, and everyday Indian wardrobes.
+              <p className="text-base sm:text-lg font-serif italic text-gc-ivory/90 font-light leading-relaxed max-w-lg">
+                Motifs are drawn, colours are chosen, cotton is prepared, and Jaipur’s print language takes shape before it becomes everyday clothing.
               </p>
 
               <div className="pt-2">
@@ -441,25 +441,25 @@ export default function HomePage() {
                   href="/story"
                   className="group/cta px-7 py-3.5 bg-gc-white text-gc-ink font-sans font-bold text-xs uppercase tracking-widest hover:bg-[#D8C9AF] transition-all duration-300 rounded-[2px] inline-flex items-center gap-2.5 shadow-md"
                 >
-                  <span>EXPLORE OUR STORY</span>
+                  <span>STEP INSIDE</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/cta:translate-x-1.5" />
                 </Link>
               </div>
             </div>
 
-            {/* Right Column: Large Image Panel */}
+            {/* Right Column: One Strong Image Panel */}
             <div className="lg:col-span-6 relative">
               <div className="group aspect-[4/3] sm:aspect-[16/10] rounded-[2px] overflow-hidden shadow-2xl relative border border-white/15">
                 <img
                   src="/brand/category-unstitched.jpg"
-                  alt="The Gulabchand Print Room"
+                  alt="Inside The Gulabchand Print Room"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out filter brightness-95"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#16251E]/90 via-transparent to-transparent pointer-events-none" />
 
                 <div className="absolute bottom-5 left-5 z-10">
                   <span className="px-3.5 py-1.5 bg-black/60 backdrop-blur-md text-[#D8C9AF] font-sans font-bold text-[10px] tracking-[0.22em] uppercase border border-[#D8C9AF]/30 rounded-xs shadow-md">
-                    ATELIER PRINT ROOM
+                    PRINT ROOM ATELIER
                   </span>
                 </div>
               </div>
@@ -467,42 +467,54 @@ export default function HomePage() {
 
           </div>
 
-          {/* 3 Brand Pillars Below */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-white/15">
+          {/* 4 Pillars Below */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-8 border-t border-white/15">
             
-            <div className="p-6 rounded-[2px] bg-white/5 border border-white/10 hover:border-[#D8C9AF]/50 transition-colors space-y-2 group/card">
+            <div className="p-5 rounded-[2px] bg-white/5 border border-white/10 hover:border-[#D8C9AF]/50 transition-colors space-y-2 group/card">
               <span className="text-[10px] font-mono font-bold text-[#D8C9AF] uppercase tracking-widest block">
-                01 · HERITAGE
+                01 · MOTIFS
               </span>
-              <h3 className="font-serif font-bold text-lg text-white uppercase group-hover/card:text-[#D8C9AF] transition-colors">
-                JAIPUR PRINT LEGACY
+              <h3 className="font-serif font-bold text-base text-white uppercase group-hover/card:text-[#D8C9AF] transition-colors">
+                MOTIFS
               </h3>
               <p className="text-xs font-sans text-gc-ivory/70 font-light leading-relaxed">
-                Carrying forward Jaipur’s heritage of hand block motifs, traditional bootis, and natural dye crafts.
+                Pattern language inspired by Jaipur.
               </p>
             </div>
 
-            <div className="p-6 rounded-[2px] bg-white/5 border border-white/10 hover:border-[#D8C9AF]/50 transition-colors space-y-2 group/card">
+            <div className="p-5 rounded-[2px] bg-white/5 border border-white/10 hover:border-[#D8C9AF]/50 transition-colors space-y-2 group/card">
               <span className="text-[10px] font-mono font-bold text-[#D8C9AF] uppercase tracking-widest block">
-                02 · ARTISANAL
+                02 · COLOUR
               </span>
-              <h3 className="font-serif font-bold text-lg text-white uppercase group-hover/card:text-[#D8C9AF] transition-colors">
-                HAND BLOCK PRINTING
+              <h3 className="font-serif font-bold text-base text-white uppercase group-hover/card:text-[#D8C9AF] transition-colors">
+                COLOUR
               </h3>
               <p className="text-xs font-sans text-gc-ivory/70 font-light leading-relaxed">
-                Hand-carved wooden blocks stamped onto pure cotton, mulmul, chanderi, and kota doria weaves.
+                Earthy tones, festive accents, everyday ease.
               </p>
             </div>
 
-            <div className="p-6 rounded-[2px] bg-white/5 border border-white/10 hover:border-[#D8C9AF]/50 transition-colors space-y-2 group/card">
+            <div className="p-5 rounded-[2px] bg-white/5 border border-white/10 hover:border-[#D8C9AF]/50 transition-colors space-y-2 group/card">
               <span className="text-[10px] font-mono font-bold text-[#D8C9AF] uppercase tracking-widest block">
-                03 · LIFESTYLE
+                03 · COTTON
               </span>
-              <h3 className="font-serif font-bold text-lg text-white uppercase group-hover/card:text-[#D8C9AF] transition-colors">
-                EVERYDAY INDIAN WARDROBES
+              <h3 className="font-serif font-bold text-base text-white uppercase group-hover/card:text-[#D8C9AF] transition-colors">
+                COTTON
               </h3>
               <p className="text-xs font-sans text-gc-ivory/70 font-light leading-relaxed">
-                Thoughtfully tailored apparel, unstitched suit sets, and soft home textiles for lived-in spaces.
+                Breathable fabric for Indian wardrobes.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-[2px] bg-white/5 border border-white/10 hover:border-[#D8C9AF]/50 transition-colors space-y-2 group/card">
+              <span className="text-[10px] font-mono font-bold text-[#D8C9AF] uppercase tracking-widest block">
+                04 · CRAFT
+              </span>
+              <h3 className="font-serif font-bold text-base text-white uppercase group-hover/card:text-[#D8C9AF] transition-colors">
+                CRAFT
+              </h3>
+              <p className="text-xs font-sans text-gc-ivory/70 font-light leading-relaxed">
+                Hand-led printmaking with natural variation.
               </p>
             </div>
 

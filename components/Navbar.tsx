@@ -64,7 +64,7 @@ export const Navbar = () => {
                 background: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 65%, rgba(0,0,0,0) 100%)",
                 backdropFilter: "none",
                 WebkitBackdropFilter: "none",
-                borderBottom: "1px solid rgba(255,255,255,0.18)",
+                borderBottom: "none",
               }
             : {
                 background: "#FCFBF8",
