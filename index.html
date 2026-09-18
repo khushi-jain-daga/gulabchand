@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gulab Chand Prints — Hand Block Printed Fashion Jaipur</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Noto+Serif+Devanagari:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cotton: { 50: "#FCFAF6", 100: "#F7F1E8", 200: "#EFE6D6" },
+            ink: { 950: "#090909", 900: "#111111", 800: "#1E1E1E" },
+            indigo: { 900: "#10283E", 800: "#183A59" },
+            madder: { 700: "#B64B5A" },
+            wood: { 700: "#7A4A2A" },
+            turmeric: { 500: "#D9A441", 400: "#E8B95C" }
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'Georgia', 'serif'],
+            hindi: ['"Noto Serif Devanagari"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- React & ReactDOM CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    body {
+      background-color: #F7F1E8;
+      color: #111111;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-indigo-800 selection:text-white">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState } = React;
+
+    const PRODUCTS = [
+      {
+        id: "indigo-dabu-dress",
+        name: "Indigo Dabu Print Cotton Midi Dress",
+        category: "Dresses",
+        price: 2450,
+        craftTechnique: "Dabu Mud Resist",
+        image: "file:///C:/Users/HP/.gemini/antigravity-ide/brain/28736e07-a921-4454-92c5-af426b951fbb/indigo_dabu_dress_1789339084535.jpg"
+      },
+      {
+        id: "madder-rose-suit-set",
+        name: "Madder Rose Hand Block Suit Set",
+        category: "Suit Sets",
+        price: 3290,
+        craftTechnique: "Teak Wood Block Print",
+        image: "file:///C:/Users/HP/.gemini/antigravity-ide/brain/28736e07-a921-4454-92c5-af426b951fbb/madder_rose_suit_1789339100350.jpg"
+      },
+      {
+        id: "bagru-print-men-shirt",
+        name: "Bagru Print Pure Cotton Men Shirt",
+        category: "Men Shirts",
+        price: 1350,
+        craftTechnique: "Bagru Natural Dye",
+        image: "file:///C:/Users/HP/.gemini/antigravity-ide/brain/28736e07-a921-4454-92c5-af426b951fbb/hero_hand_block_print_1789339069604.jpg"
+      },
+      {
+        id: "quilted-dohar-bedsheet",
+        name: "Jaipur Reversible Hand Block Quilted Dohar",
+        category: "Home Decor",
+        price: 2890,
+        craftTechnique: "Sanganeri Hand Block",
+        image: "file:///C:/Users/HP/.gemini/antigravity-ide/brain/28736e07-a921-4454-92c5-af426b951fbb/home_decor_quilt_1789339116924.jpg"
+      }
+    ];
+
+    function App() {
+      const [page, setPage] = useState("home");
+      const [cart, setCart] = useState([]);
+
+      const addToCart = (product) => {
+        setCart(prev => {
+          const exists = prev.find(i => i.product.id === product.id);
+          if (exists) return prev.map(i => i.product.id === product.id ? {...i, qty: i.qty + 1} : i);
+          return [...prev, { product, qty: 1 }];
+        });
+      };
+
+      const totalItems = cart.reduce((a, c) => a + c.qty, 0);
+      const subtotal = cart.reduce((a, c) => a + (c.product.price * c.qty), 0);
+
+      return (
+        <div className="min-h-screen flex flex-col">
+          <header className="fixed top-0 left-0 right-0 z-50 bg-cotton-50/95 backdrop-blur-md border-b border-wood-700/15 py-4 px-6 flex justify-between items-center">
+            <div onClick={() => setPage("home")} className="cursor-pointer flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-indigo-800 text-cotton-50 font-serif font-bold text-sm flex items-center justify-center">GC</div>
+              <span className="font-serif font-bold text-lg text-ink-900 tracking-widest">GULAB CHAND PRINTS</span>
+            </div>
+
+            <nav className="hidden md:flex gap-6 text-xs font-mono tracking-widest uppercase">
+              <button onClick={() => setPage("home")} className={page === "home" ? "text-indigo-800 font-bold" : "text-ink-800"}>Home</button>
+              <button onClick={() => setPage("shop")} className={page === "shop" ? "text-indigo-800 font-bold" : "text-ink-800"}>Shop</button>
+              <button onClick={() => setPage("craft")} className={page === "craft" ? "text-indigo-800 font-bold" : "text-ink-800"}>Craft</button>
+              <button onClick={() => setPage("cart")} className={page === "cart" ? "text-indigo-800 font-bold" : "text-ink-800"}>Bag ({totalItems})</button>
+              <button onClick={() => setPage("admin")} className={page === "admin" ? "text-indigo-800 font-bold" : "text-ink-800"}>Admin</button>
+            </nav>
+          </header>
+
+          <div className="flex-1 pt-24">
+            {page === "home" && (
+              <section className="py-20 text-center px-4">
+                <div className="max-w-4xl mx-auto space-y-6">
+                  <span className="text-xs font-mono text-wood-700 tracking-widest uppercase">HAND BLOCK PRINTED IN JAIPUR</span>
+                  <h1 className="text-5xl sm:text-7xl font-serif font-bold text-ink-900">Every print <span className="italic text-indigo-800">carries a hand.</span></h1>
+                  <p className="text-xl font-serif italic text-ink-800 font-light">"Hand block printed in Jaipur for everyday elegance."</p>
+                  <button onClick={() => setPage("shop")} className="px-8 py-4 bg-indigo-800 text-cotton-50 font-mono font-bold text-xs uppercase tracking-widest rounded-full shadow-lg">
+                    SHOP NEW ARRIVALS
+                  </button>
+                </div>
+              </section>
+            )}
+
+            {page === "shop" && (
+              <section className="max-w-7xl mx-auto px-6 py-12">
+                <h2 className="text-4xl font-serif font-bold text-center mb-10">Hand Block <span className="italic text-indigo-800">Collections</span></h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {PRODUCTS.map(p => (
+                    <div key={p.id} className="p-4 bg-white rounded-2xl border border-wood-700/15 space-y-3">
+                      <img src={p.image} className="w-full h-64 object-cover rounded-xl" />
+                      <h3 className="font-serif font-bold text-base text-ink-900">{p.name}</h3>
+                      <div className="flex justify-between items-center pt-2">
+                        <span className="font-serif font-bold text-indigo-900">₹{p.price}</span>
+                        <button onClick={() => addToCart(p)} className="px-4 py-2 bg-indigo-800 text-cotton-50 font-mono font-bold text-xs uppercase rounded-xl">+ ADD</button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {page === "craft" && (
+              <section className="max-w-4xl mx-auto px-6 py-12 text-center space-y-6">
+                <h2 className="text-4xl font-serif font-bold">The Craft Journey</h2>
+                <p className="text-ink-800 font-serif italic">"Every print carries a hand."</p>
+                <div className="grid gap-4 text-left">
+                  <div className="p-6 bg-white rounded-2xl border border-wood-700/15">
+                    <h3 className="font-serif font-bold text-xl">01. Wood Block Carving</h3>
+                    <p className="text-xs text-ink-600">Seasoned teakwood chiseled by hand with intricate motifs.</p>
+                  </div>
+                  <div className="p-6 bg-white rounded-2xl border border-wood-700/15">
+                    <h3 className="font-serif font-bold text-xl">02. Dabu Mud Resist & Natural Dyeing</h3>
+                    <p className="text-xs text-ink-600">Clay resist paste stamped and dipped in natural fermented indigo vats.</p>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {page === "cart" && (
+              <section className="max-w-3xl mx-auto px-6 py-12 space-y-6">
+                <h2 className="text-3xl font-serif font-bold">YOUR SHOPPING BAG</h2>
+                {cart.length === 0 ? <p className="text-ink-600 font-mono">Bag is empty.</p> : (
+                  <div className="p-6 bg-white rounded-2xl border border-wood-700/15 space-y-4">
+                    {cart.map((i, idx) => (
+                      <div key={idx} className="flex justify-between">
+                        <span>{i.qty}x {i.product.name}</span>
+                        <span className="font-bold">₹{i.product.price * i.qty}</span>
+                      </div>
+                    ))}
+                    <div className="flex justify-between font-bold text-lg pt-4 border-t">
+                      <span>TOTAL</span>
+                      <span className="text-indigo-900">₹{subtotal}</span>
+                    </div>
+                  </div>
+                )}
+              </section>
+            )}
+
+            {page === "admin" && (
+              <section className="max-w-5xl mx-auto px-6 py-12">
+                <h2 className="text-3xl font-serif font-bold mb-6">FASHION COMMERCE DASHBOARD</h2>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="p-5 bg-white rounded-xl border border-wood-700/15"><span className="text-xs font-mono">TODAY'S ORDERS</span><h3 className="text-2xl font-bold">18</h3></div>
+                  <div className="p-5 bg-white rounded-xl border border-wood-700/15"><span className="text-xs font-mono">REVENUE</span><h3 className="text-2xl font-bold text-indigo-900">₹42,850</h3></div>
+                  <div className="p-5 bg-white rounded-xl border border-wood-700/15"><span className="text-xs font-mono">LOW STOCK</span><h3 className="text-2xl font-bold text-madder-700">2 Items</h3></div>
+                </div>
+              </section>
+            )}
+          </div>
+
+          <footer className="py-8 bg-ink-950 text-cotton-200 text-center text-xs font-mono border-t border-ink-800">
+            © 2026 Gulab Chand Prints. Jaipur Hand Block Textiles.
+          </footer>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

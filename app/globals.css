@@ -1,0 +1,248 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    --gc-ivory: #F6F2E9;
+    --gc-ink: #20201D;
+    --gc-muted: #6F6A61;
+    --gc-border: #DCD6CB;
+    --gc-cotton: #EEE8DD;
+    --gc-sand: #D8C9AF;
+    --gc-green: #365846;
+    --gc-rose: #9A3F59;
+    --gc-white: #FCFBF8;
+    --gc-dark: #19251F;
+
+    --gc-radius-sm: 2px;
+    --gc-radius-md: 4px;
+    --gc-transition: 200ms ease;
+  }
+
+  body {
+    background-color: var(--gc-ivory);
+    color: var(--gc-ink);
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    selection-background-color: var(--gc-green);
+    selection-color: var(--gc-white);
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Newsreader', Georgia, serif;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--gc-green);
+    outline-offset: 2px;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--gc-ivory);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gc-sand);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gc-muted);
+}
+
+/* Clean Editorial UI Elements */
+.gc-card {
+  background-color: var(--gc-white);
+  border: 1px solid var(--gc-border);
+  transition: border-color 200ms ease;
+}
+
+.gc-product-card {
+  background-color: transparent;
+  border: none;
+  transition: transform 200ms ease;
+}
+
+.gc-btn-primary {
+  background-color: var(--gc-ink);
+  color: var(--gc-white);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 2px;
+  transition: all 200ms ease;
+}
+.gc-btn-primary:hover {
+  background-color: var(--gc-green);
+}
+
+.gc-btn-secondary {
+  background-color: transparent;
+  color: var(--gc-ink);
+  border: 1px solid var(--gc-ink);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 2px;
+  transition: all 200ms ease;
+}
+.gc-btn-secondary:hover {
+  background-color: var(--gc-ink);
+  color: var(--gc-white);
+}
+
+.gc-container {
+  width: 100%;
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 768px) {
+  .gc-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/* Motion Reveal Animation Helper */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 800ms ease, transform 800ms ease;
+}
+.reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Moving Marquee Animation */
+@keyframes gc-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.gc-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: gc-marquee 28s linear infinite;
+}
+
+.gc-marquee:hover .gc-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Subtle Hero Video Scale Animation */
+@keyframes gc-hero-scale {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.gc-hero-video {
+  animation: gc-hero-scale 18s ease-in-out infinite alternate;
+}
+
+/* Floating Craft Chips */
+@keyframes gc-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.floating-chip {
+  animation: gc-float 4s ease-in-out infinite;
+}
+
+/* Interactive Hover Utilities */
+.arrow-hover span {
+  transition: transform 250ms ease;
+}
+.arrow-hover:hover span {
+  transform: translateX(4px);
+}
+
+.image-hover-zoom {
+  overflow: hidden;
+}
+.image-hover-zoom img,
+.image-hover-zoom video {
+  transition: transform 700ms ease;
+}
+.image-hover-zoom:hover img,
+.image-hover-zoom:hover video {
+  transform: scale(1.08);
+}
+
+/* Pulse Glow Line */
+@keyframes gc-pulse-line {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scaleX(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+.pulse-line {
+  animation: gc-pulse-line 3s ease-in-out infinite;
+}
+
+/* Keyframe animations for hero & interactions */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gc-scroll-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .gc-marquee-track,
+  .gc-hero-video,
+  .floating-chip,
+  .pulse-line {
+    animation: none !important;
+  }
+  .reveal-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

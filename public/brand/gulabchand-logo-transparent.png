@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 110" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&amp;family=Outfit:wght@700&amp;display=swap');
+      .gc-logo-main {
+        font-family: 'Fredoka', 'Quicksand', 'Arial Rounded MT Bold', 'Nunito', 'Segoe UI', system-ui, -apple-system, sans-serif;
+        font-weight: 700;
+        font-size: 56px;
+        fill: #008B28;
+        letter-spacing: 0.02em;
+      }
+      .gc-logo-sub {
+        font-family: 'Outfit', 'Trebuchet MS', 'Arial', sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        fill: #E4007F;
+        letter-spacing: 0.02em;
+      }
+      .gc-logo-reg {
+        font-family: 'Outfit', 'Arial', sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        fill: #008B28;
+      }
+    </style>
+  </defs>
+
+  <!-- Gulabchand Authentic Brand Logo: Emerald Green + Rose Pink Since 1930 -->
+  <g id="gulabchand-brand" transform="translate(12, 64)">
+    <text class="gc-logo-main" x="0" y="0">GULAB CHAND</text>
+    <text class="gc-logo-reg" x="408" y="-30">®</text>
+    <text class="gc-logo-sub" x="300" y="32">Since 1930</text>
+  </g>
+</svg>
