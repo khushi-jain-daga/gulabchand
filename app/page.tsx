@@ -451,57 +451,103 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 06 OUR STORY PREVIEW — Memorable Editorial Layout with Floating Chips */}
-      <section className="py-16 md:py-24 bg-gc-white border-b border-gc-border">
-        <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[56px]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-            
-            {/* Left: Media Block with Floating Chips */}
-            <div className="lg:col-span-6 relative">
-              <div className="group aspect-[16/10] rounded-[2px] overflow-hidden shadow-sm relative bg-gc-cotton border border-gc-border">
-                <ProductImage
-                  src="https://cdn.shopify.com/s/files/1/0687/1616/7406/files/PUN_2150.jpg"
-                  alt="Gulabchand Craft Hand Block Printing"
-                  category="Story"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+      {/* 06 THE GULABCHAND PRINT ROOM — Iconic Brand Room Section */}
+      <section className="py-20 md:py-28 bg-[#16251E] text-gc-ivory border-b border-gc-border/30 select-none overflow-hidden relative">
+        {/* Infinite Moving Marquee Header */}
+        <div className="w-full overflow-hidden border-b border-white/10 pb-4 mb-12 sm:mb-16">
+          <div className="animate-marquee whitespace-nowrap text-xs sm:text-sm font-sans font-bold tracking-[0.25em] text-[#D8C9AF] uppercase opacity-85">
+            <span>JAIPUR HAND BLOCK PRINTS · CRAFTED THROUGH GENERATIONS · UNSTITCHED DRESS MATERIALS · LIVING TEXTILES · JAIPUR SHOWROOMS · </span>
+            <span>JAIPUR HAND BLOCK PRINTS · CRAFTED THROUGH GENERATIONS · UNSTITCHED DRESS MATERIALS · LIVING TEXTILES · JAIPUR SHOWROOMS · </span>
+          </div>
+        </div>
 
-                {/* Floating Craft Labels */}
-                <div className="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
-                  <span className="floating-chip px-2.5 py-1 rounded-[2px] bg-black/80 backdrop-blur-xs text-[#EAD8B8] font-sans font-bold text-[9px] uppercase tracking-wider border border-white/10 shadow-xs">
-                    JAIPUR PRINT LEGACY
-                  </span>
-                  <span className="floating-chip px-2.5 py-1 rounded-[2px] bg-black/80 backdrop-blur-xs text-[#EAD8B8] font-sans font-bold text-[9px] uppercase tracking-wider border border-white/10 shadow-xs" style={{ animationDelay: "1.2s" }}>
-                    HAND BLOCK PRINTING
-                  </span>
-                  <span className="floating-chip px-2.5 py-1 rounded-[2px] bg-[#1E3A2B]/95 backdrop-blur-xs text-white font-sans font-bold text-[9px] uppercase tracking-wider border border-white/10 shadow-xs" style={{ animationDelay: "2.4s" }}>
-                    BLOCK TO CLOTH
+        <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[56px] relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            
+            {/* Left Media Panel */}
+            <div className="lg:col-span-6 relative">
+              <div className="group aspect-[4/3] sm:aspect-[16/10] rounded-[2px] overflow-hidden shadow-2xl relative border border-white/15">
+                <img
+                  src="/brand/category-women.jpg"
+                  alt="The Gulabchand Print Room"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out filter brightness-95"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#16251E] via-transparent to-transparent pointer-events-none" />
+
+                <div className="absolute bottom-5 left-5 z-10">
+                  <span className="px-3.5 py-1.5 bg-black/60 backdrop-blur-md text-[#D8C9AF] font-sans font-bold text-[10px] tracking-[0.22em] uppercase border border-[#D8C9AF]/30 rounded-xs shadow-md">
+                    ATELIER PRINT ROOM
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Right: Editorial Narrative */}
-            <div className="lg:col-span-6 space-y-4">
-              <span className="text-[10px] font-sans font-bold text-gc-green uppercase tracking-[0.2em] block">
-                OUR STORY
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-gc-ink uppercase tracking-tight leading-tight">
-                EVERY PRINT<br className="hidden sm:inline" /> CARRIES A HAND.
-              </h2>
-              <p className="text-base sm:text-lg font-serif text-gc-muted font-light leading-relaxed max-w-lg">
-                From carved blocks to printed cloth, Gulabchand carries Jaipur’s hand-block printing tradition into clothing, unstitched fabrics and home textiles made for today.
-              </p>
+            {/* Right Editorial Copy & 3 Brand Pillars */}
+            <div className="lg:col-span-6 space-y-6">
+              <div className="space-y-2">
+                <span className="text-xs font-sans font-bold tracking-[0.25em] text-[#D8C9AF] uppercase block">
+                  BRAND ATELIER
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white uppercase tracking-tight leading-[1.02]">
+                  THE GULABCHAND<br />PRINT ROOM
+                </h2>
+                <p className="text-base sm:text-lg font-serif italic text-gc-ivory/80 font-light leading-relaxed pt-1">
+                  Where Jaipur heritage craft meets contemporary everyday wardrobes.
+                </p>
+              </div>
+
+              {/* 3 Brand Pillars */}
+              <div className="space-y-4 pt-2 border-t border-white/15">
+                
+                <div className="flex items-start gap-4 group/pillar">
+                  <span className="font-mono text-xs font-bold text-[#D8C9AF] pt-0.5">01</span>
+                  <div className="space-y-0.5">
+                    <h4 className="font-sans font-bold text-xs uppercase tracking-wider text-white group-hover/pillar:text-[#D8C9AF] transition-colors">
+                      JAIPUR PRINT LEGACY
+                    </h4>
+                    <p className="text-xs font-sans text-gc-ivory/70 font-light leading-relaxed">
+                      Carrying forward Jaipur’s heritage of hand block motifs, traditional bootis, and natural dye crafts.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 group/pillar">
+                  <span className="font-mono text-xs font-bold text-[#D8C9AF] pt-0.5">02</span>
+                  <div className="space-y-0.5">
+                    <h4 className="font-sans font-bold text-xs uppercase tracking-wider text-white group-hover/pillar:text-[#D8C9AF] transition-colors">
+                      HAND BLOCK PRINTING
+                    </h4>
+                    <p className="text-xs font-sans text-gc-ivory/70 font-light leading-relaxed">
+                      Hand-carved wooden blocks stamped onto pure cotton, mulmul, chanderi, and kota doria weaves.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 group/pillar">
+                  <span className="font-mono text-xs font-bold text-[#D8C9AF] pt-0.5">03</span>
+                  <div className="space-y-0.5">
+                    <h4 className="font-sans font-bold text-xs uppercase tracking-wider text-white group-hover/pillar:text-[#D8C9AF] transition-colors">
+                      EVERYDAY INDIAN WARDROBES
+                    </h4>
+                    <p className="text-xs font-sans text-gc-ivory/70 font-light leading-relaxed">
+                      Thoughtfully tailored apparel, unstitched suit sets, and soft home textiles for lived-in spaces.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* CTA Button */}
               <div className="pt-2">
                 <Link
                   href="/story"
-                  className="group h-12 px-7 bg-[#20201D] text-[#FCFBF8] font-sans font-bold text-xs uppercase tracking-widest hover:bg-gc-green transition-all duration-300 rounded-[2px] inline-flex items-center justify-center gap-2 shadow-sm"
+                  className="group px-7 py-3.5 bg-gc-white text-gc-ink font-sans font-bold text-xs uppercase tracking-widest hover:bg-[#D8C9AF] transition-all duration-300 rounded-[2px] inline-flex items-center justify-center gap-2.5 shadow-md"
                 >
-                  <span>READ OUR STORY</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                  <span>EXPLORE OUR STORY</span>
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" />
                 </Link>
               </div>
+
             </div>
 
           </div>

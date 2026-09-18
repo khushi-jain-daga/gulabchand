@@ -29,35 +29,35 @@ export default function StoryPage() {
       num: "01",
       title: "DRAW",
       subtitle: "The Motif Conception",
-      desc: "Every print begins as a hand-drawn illustration — balancing rhythm, repeat, and the natural geometry of flowers, vines, and traditional Rajasthani bootas.",
+      desc: "A motif begins as a rhythm — drawn by hand, inspired by Rajasthani florals and traditional geometric bootis.",
       img: "/brand/category-unstitched.jpg"
     },
     {
       num: "02",
       title: "CARVE",
       subtitle: "The Wood Carving",
-      desc: "Skilled wood carvers chisel seasoned Sheesham or Teak wood by hand. Separate relief blocks are carved for the outline (rekh) and each background filler colour (datta).",
+      desc: "A block gives it form — hand-carved in wood with precision by Jaipur craftsmen.",
       img: "https://cdn.shopify.com/s/files/1/0687/1616/7406/files/PUN_2150.jpg"
     },
     {
       num: "03",
       title: "COLOUR",
-      subtitle: "The Dye Preparation",
-      desc: "Rich dye formulations are mixed to precise viscosities in traditional wooden dye trays (tari), ensuring optimal saturation without bleeding across the weave.",
+      subtitle: "The Dye Formulation",
+      desc: "Dyes are formulated — balancing rich indigo, natural mud resist, and botanical shades.",
       img: "/brand/category-women.jpg"
     },
     {
       num: "04",
       title: "STAMP",
       subtitle: "The Precision Impression",
-      desc: "Artisans stamp the pinned cotton lengths with swift, confident strikes of the palm. Registration is judged by eye and tactile muscle memory honed over decades.",
+      desc: "A hand gives it character — stamped with steady rhythm and sight honed over decades.",
       img: "https://cdn.shopify.com/s/files/1/0687/1616/7406/files/PUN_2146.jpg"
     },
     {
       num: "05",
       title: "FINISH",
-      subtitle: "Washing, Sun-Drying & Softening",
-      desc: "Printed textiles are sun-cured, washed in flowing waters to fix dyes and remove surplus pigments, then steam-softened into featherweight mulmul and durable cottons.",
+      subtitle: "Sun-Cured & Softened",
+      desc: "Sun-cured and washed — transforming raw cotton into soft, wearable living textiles.",
       img: "/brand/category-men.jpg"
     }
   ];
@@ -123,9 +123,13 @@ export default function StoryPage() {
             {/* Moving / Animated Glow Underline */}
             <div className="w-24 h-[2.5px] bg-gc-green mx-auto my-5 pulse-line rounded-full" />
 
-            <p className="text-base sm:text-lg font-serif italic text-gc-muted font-light max-w-[620px] mx-auto leading-relaxed">
-              Gulabchand brings together Rajasthan’s block printing heritage and contemporary everyday dressing — pieces with the softness, variation, and character only hand printing can carry.
-            </p>
+            <div className="space-y-1 font-serif text-base sm:text-xl italic text-gc-muted font-light max-w-[640px] mx-auto leading-relaxed pt-2">
+              <p>A motif begins as a rhythm. A block gives it form.</p>
+              <p>A hand gives it character.</p>
+              <p className="text-gc-ink font-normal not-italic pt-2 text-sm sm:text-base font-sans tracking-wide uppercase">
+                The result is never mechanical — it carries the mark of touch.
+              </p>
+            </div>
           </div>
         </div>
       </section>
