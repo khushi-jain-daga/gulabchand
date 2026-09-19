@@ -103,17 +103,21 @@ export default function ProductDetailPage() {
           <div className="lg:col-span-7 space-y-4">
             
             {/* Primary Large Image Display */}
-            <div className="aspect-[4/5] bg-[#FBF9F5] rounded-[4px] border border-gc-border/80 overflow-hidden relative group shadow-xs">
+            <div className="aspect-[3/4] sm:aspect-[4/5] max-h-[580px] sm:max-h-[640px] bg-[#F8F6F0] rounded-[4px] border border-gc-border/80 overflow-hidden relative group shadow-xs p-1.5 sm:p-2.5 flex items-center justify-center">
               <ProductImage
                 src={mediaList[activeImageIdx] || product.image}
                 alt={product.name}
                 category={product.category}
                 technique={product.craftTechnique}
-                className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                className={`w-full h-full ${
+                  activeImageIdx === 0
+                    ? "object-contain object-center"
+                    : "object-cover object-center"
+                } transition-transform duration-500 ease-out group-hover:scale-[1.02]`}
               />
 
               {/* Craft Tag Badge */}
-              <div className="absolute top-4 left-4 z-10 flex flex-wrap gap-2">
+              <div className="absolute top-4 left-4 z-10 flex flex-wrap gap-2 pointer-events-none">
                 <span className="px-3 py-1 rounded-[2px] bg-gc-ink/80 backdrop-blur-md text-gc-ivory font-sans font-bold text-[10px] uppercase tracking-[0.18em]">
                   {product.craftTechnique}
                 </span>
@@ -130,7 +134,7 @@ export default function ProductDetailPage() {
                   <button
                     key={idx}
                     onClick={() => setActiveImageIdx(idx)}
-                    className={`aspect-[4/5] rounded-[3px] overflow-hidden border-2 transition-all relative ${
+                    className={`aspect-[4/5] rounded-[3px] overflow-hidden border-2 transition-all relative bg-[#F8F6F0] ${
                       activeImageIdx === idx
                         ? "border-gc-ink ring-2 ring-gc-ink/20 opacity-100"
                         : "border-gc-border opacity-70 hover:opacity-100 hover:border-gc-ink/50"
@@ -140,23 +144,23 @@ export default function ProductDetailPage() {
                       src={imgUrl}
                       alt={`${product.name} thumbnail ${idx + 1}`}
                       category={product.category}
-                      className="w-full h-full object-cover"
+                      className={`w-full h-full ${idx === 0 ? "object-contain p-1" : "object-cover"}`}
                     />
                   </button>
                 ))}
               </div>
             ) : (
               <div className="grid grid-cols-2 gap-3 pt-1">
-                <div className="aspect-[4/5] rounded-[3px] bg-[#FBF9F5] border border-gc-border overflow-hidden relative">
+                <div className="aspect-[4/5] rounded-[3px] bg-[#F8F6F0] border border-gc-border overflow-hidden relative">
                   <ProductImage
                     src={product.image}
                     alt={`${product.name} View 1`}
                     category={product.category}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain p-1"
                   />
                 </div>
                 {product.alternateImage && (
-                  <div className="aspect-[4/5] rounded-[3px] bg-[#FBF9F5] border border-gc-border overflow-hidden relative">
+                  <div className="aspect-[4/5] rounded-[3px] bg-[#F8F6F0] border border-gc-border overflow-hidden relative">
                     <ProductImage
                       src={product.alternateImage}
                       alt={`${product.name} View 2`}
